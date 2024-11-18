@@ -1,6 +1,6 @@
 package com.example.a6starter.di
 
-import com.example.a6starter.data.remote.DogBreedApi
+import com.example.a6starter.data.remote.MyApi
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -10,6 +10,8 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
+
+private val BASE_URL: String = "https://google.com"
 
 /**
  * This is the AppModule. This handles dependency injection with Dagger Hilt for you, so you do not
@@ -31,11 +33,11 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMyApi(moshi: Moshi): DogBreedApi {
+    fun provideMyApi(moshi: Moshi): MyApi {
         return Retrofit.Builder()
-            .baseUrl("https://dogapi.dog/api/v2/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
-            .create(DogBreedApi::class.java)
+            .create(MyApi::class.java)
     }
 }
