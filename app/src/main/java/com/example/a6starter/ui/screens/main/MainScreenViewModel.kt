@@ -50,15 +50,15 @@ class MainScreenViewModel @Inject constructor(
             MainScreenViewState("", "", "")
         )
 
-    fun setUsername(username: String) {
+    fun onUsernameChange(username: String) {
         usernameFlow.update { username }
     }
 
-    fun setPassword(password: String) {
+    fun onPasswordChange(password: String) {
         passwordFlow.update { password }
     }
 
-    fun setConfirmPassword(confirmPassword: String) {
+    fun onConfirmPasswordChange(confirmPassword: String) {
         confirmPasswordFlow.update { confirmPassword }
     }
 }

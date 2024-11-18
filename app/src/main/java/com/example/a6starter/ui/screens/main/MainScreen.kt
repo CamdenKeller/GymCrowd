@@ -26,13 +26,13 @@ fun MainScreen(viewModel: MainScreenViewModel = hiltViewModel()) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text("Username")
-        TextField(value = currentViewState.username, onValueChange = viewModel::setUsername)
+        TextField(value = currentViewState.username, onValueChange = viewModel::onUsernameChange)
         Text("Password")
-        TextField(value = currentViewState.password, onValueChange = viewModel::setPassword)
+        TextField(value = currentViewState.password, onValueChange = viewModel::onPasswordChange)
         Text("Confirm password")
         TextField(
             value = currentViewState.confirmPassword,
-            onValueChange = viewModel::setConfirmPassword
+            onValueChange = viewModel::onConfirmPasswordChange
         )
         currentViewState.errorMessage?.let { error ->
             Spacer(Modifier.height(16.dp))
