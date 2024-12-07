@@ -1,2 +1,2 @@
-# a6-starter
-The starter code for assignment 6 of Intro to Android Development
+# GymCrowd
+All final code and README is under the branch new-master
